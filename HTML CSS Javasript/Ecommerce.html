@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>26 Jan Mega Sale</title>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f1f3f6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: linear-gradient(90deg,#ff9933,#fff,#138808);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-right a {
+  padding: 8px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-right a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,transparent,rgba(255,87,34,0.4),transparent);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.nav-right a:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-right a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,87,34,0.5);
+  color: #ff5722;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 40px;
+}
+
+#home {
+  background: white;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 48px;
+  color: #ff5722;
+}
+
+#home p {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+/* CAROUSEL */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.carousel-track {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.carousel img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* PRODUCTS */
+.products h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  width: 260px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg,#ff5722,#ff9800);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-right{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">🇮🇳 26 Jan Sale</div>
+  <div class="nav-right">
+    <a href="#home">Home</a>
+    <a href="#mobiles">Mobiles</a>
+    <a href="#electronics">Electronics</a>
+    <a href="#offers">Offers</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="home">
+  <h1>Republic Day Mega Sale</h1>
+  <p>Up to 50% OFF on Phones & Electronics</p>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+      <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
+    </div>
+  </div>
+</section>
+
+<section id="mobiles" class="products">
+  <h2>Mobiles</h2>
+  <div class="card-container">
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61BGE6iu4AL._SX679_.jpg"><h3>iPhone 14</h3><p>₹59,999</p><button>Buy Now</button></div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71xn9bCRfhL._SX679_.jpg"><h3>Samsung Galaxy S23</h3><p>₹49,999</p><button>Buy Now</button></div>
+  </div>
+</section>
+
+<section id="electronics" class="products">
+  <h2>Electronics</h2>
+  <div class="card-container">
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._SX679_.jpg"><h3>IPhone 13</h3><p>₹42,999</p><button>Buy Now</button></div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71qodgw4uGL._SX679_.jpg"><h3>Noise Headphones</h3><p>₹2,999</p><button>Buy Now</button></div>
+  </div>
+</section>
+
+<section id="offers">
+  <h2 style="text-align:center;font-size:32px;">Special Offers 🎉</h2>
+  <p style="text-align:center;margin-top:15px;">Extra 10% off on prepaid orders!</p>
+</section>
+
+<section id="contact">
+  <h2 style="text-align:center;font-size:32px;">Contact Us</h2>
+  <p style="text-align:center;margin-top:15px;">Email: abhimessi096@gmail.com</p>
+</section>
+
+<footer>
+  © 2026 Republic Day Sale | Made in India ❤️
+</footer>
+
+</body>
+</html>

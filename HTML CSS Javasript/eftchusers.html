@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Dashboard - Todo Directory</title>
+</head>
+<body>
+    <script>
+
+        const API_URL = "https://jsonplaceholder.typicode.com/todos";
+
+fetch(API_URL)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to fetch data");
+        }
+        return response.json();
+    })
+    .then(todos => {
+
+        // Show only first 5 users tasks
+        const firstFiveTasks = todos.slice(0, 5);
+        const tableBody = document.getElementById("todoTableBody");
+
+        firstFiveTasks.forEach(task => {
+            const row = document.createElement("tr");
+
+            const userId = document.createElement("td");
+            userId.textContent = task.userId;
+
+            const email = document.createElement("td");
+            email.textContent = `user${task.userId}@company.com`;
+
+            const status = document.createElement("td");
+            status.textContent = task.completed ? "Completed" : "Pending";
+
+            row.appendChild(userId);
+            row.appendChild(email);
+            row.appendChild(status);
+
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        document.getElementById("error").textContent =
+            "Error loading todo tasks. Please try again later.";
+        console.error(error);
+    });
+
+
+    </script>
+
+<h1>Todo Task Directory</h1>
+<table border="1" cellpadding="8" style="border-collapse: collapse;">
+
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody id="todoTableBody"></tbody>
+</table>
+
+<p id="error"></p>
+</body>
+</html>

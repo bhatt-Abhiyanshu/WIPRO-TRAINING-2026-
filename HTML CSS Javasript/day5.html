@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta item="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Discount</title>
+</head>
+<body>
+    <h1>This is the item list.</h1>
+    <script>
+        const itemList = [
+            { item: "Laptop", price: 60000 },
+            { item: "Mouse", price: 500 },
+            { item: "Keyboard", price: 700 },
+            { item: "Speaker", price: 5000 }
+        ];
+        // i arrow(i=>) function will take each item i from an array and return a new object 
+        // ... (spread) means- it will copy all properties of the original item and apply discount on it 
+
+        const itemOnDiscount = itemList.map(i=>({item:i.item,price:i.price-(0.1*i.price)}));
+
+        document.writeln("Discounted Products:<br>");
+        itemOnDiscount.forEach(i =>document.writeln(i.item + " : " + i.price + "<br>"));
+
+        document.writeln("<br>");
+
+        const totalAfterDiscount = itemOnDiscount.reduce((sum, i) => sum + i.price, 0);
+        document.writeln("Total Price After Discount: " + totalAfterDiscount + "<br><br>");
+
+        const filteredProducts = itemOnDiscount.filter(p => p.price > 4000);
+        document.writeln("Products having price greater than 4000 after discount:<br>");
+        filteredProducts.forEach(i =>document.writeln(i.item + " : " + i.price + "<br>"));
+
+    </script>
+</body>
+</html>

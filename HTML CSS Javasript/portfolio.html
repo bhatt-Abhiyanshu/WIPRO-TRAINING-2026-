@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:#eaeaea;
+    overflow-x:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size:cover;
+    background-position:center;
+    z-index:-3;
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(90deg, rgba(30,144,255,0.15) 1px, transparent 1px),
+        linear-gradient(rgba(30,144,255,0.15) 1px, transparent 1px);
+    background-size:50px 50px;
+    opacity:0.25;
+    z-index:-2;
+    animation:moveGrid 25s linear infinite;
+}
+
+@keyframes moveGrid{
+    from{background-position:0 0;}
+    to{background-position:50px 50px;}
+}
+
+.toggle{
+    position:fixed;
+    top:15px;
+    right:20px;
+    z-index:10;
+}
+
+.toggle input{
+    display:none;
+}
+
+.toggle label{
+    background:#0d6efd;
+    color:white;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+input:checked ~ .page{
+    background:rgba(0,0,0,0.75);
+}
+
+.page{
+    min-height:100vh;
+    background:rgba(0,0,0,0.55);
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    animation:slideDown 1s ease;
+}
+
+.logo{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:2px solid #0d6efd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin:0 auto 12px;
+    color:#0d6efd;
+}
+
+header h1{
+    font-size:38px;
+    color:#ffffff;
+}
+
+header p{
+    color:#b0cfff;
+}
+
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:20px;
+}
+
+section{
+    background:rgba(20,20,20,0.8);
+    margin:25px 0;
+    padding:30px;
+    border-radius:14px;
+    backdrop-filter:blur(6px);
+    transition:0.3s;
+    animation:fadeIn 1s ease;
+}
+
+section:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(13,110,253,0.25);
+}
+
+h2{
+    color:#0d6efd;
+    margin-bottom:12px;
+}
+
+ul,ol{
+    padding-left:20px;
+}
+
+li{
+    margin:10px 0;
+}
+
+a{
+    color:#4da3ff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    background:rgba(0,0,0,0.7);
+    margin-top:40px;
+}
+
+footer p{
+    color:#b0cfff;
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@media(max-width:600px){
+    header h1{font-size:28px;}
+    section{padding:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="grid"></div>
+
+<div class="toggle">
+    <input type="checkbox" id="dark">
+    <label for="dark">Dark Mode</label>
+</div>
+
+<input type="checkbox" id="dark" hidden>
+
+<div class="page">
+
+<header>
+    <div class="logo">AB</div>
+    <h1>Abhyanshu Bhatt</h1>
+    <p>Tech-Driven Web Developer</p>
+</header>
+
+<div class="container">
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am a passionate web developer focused on building modern,
+        techno-inspired, responsive interfaces with clean design.
+    </p>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Java Basics</li>
+        <li>UI Design</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Projects</h2>
+    <ol>
+        <li>Student Registration System</li>
+        <li>Calculator App</li>
+        <li>Personal Tech Portfolio</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <p>Email: abhyanshu@example.com</p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/abhyanshu</a></p>
+</section>
+
+</div>
+
+<footer>
+    <div class="logo">AB</div>
+    <p>&copy; 2026 Abhyanshu Bhatt</p>
+</footer>
+
+</div>
+
+</body>
+</html>
