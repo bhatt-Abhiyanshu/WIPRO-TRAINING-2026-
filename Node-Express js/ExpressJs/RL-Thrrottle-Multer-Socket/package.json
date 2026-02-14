@@ -1,0 +1,19 @@
+{
+  "name": "rl-thrrottle-multer-socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "multer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express-rate-limit": "^8.2.1",
+    "multer": "^2.0.2",
+    "socket": "^1.1.63",
+    "socket.io": "^4.8.3"
+  }
+}

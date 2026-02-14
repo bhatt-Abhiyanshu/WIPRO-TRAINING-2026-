@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<script>
+function login() {
+  fetch("/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: username.value,
+      password: password.value
+    })
+  })
+  .then(r => {
+    if (!r.ok) throw 0
+    return r.json()
+  })
+  .then(d => {
+    d.role === "admin"
+      ? location.href = "/admin.html"
+      : location.href = "/user.html"
+  })
+  .catch(() => alert("Invalid credentials"))
+}
+</script>
+
+</body>
+</html>

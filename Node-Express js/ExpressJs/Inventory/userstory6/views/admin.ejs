@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <h3>Products</h3>
+  <ul>
+    <li>Laptop</li>
+    <li>Mobile</li>
+    <li>Headphones</li>
+  </ul>
+
+  <% if (token) { %>
+    <p><strong>JWT Token:</strong></p>
+    <textarea rows="5" cols="60"><%= token %></textarea>
+  <% } %>
+</body>
+</html>

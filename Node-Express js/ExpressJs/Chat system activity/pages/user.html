@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head> <title>User Chat</title></head>
+<body>
+<h3>User Panel</h3>
+<ul id="chat"></ul>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io("http://localhost:5001")
+socket.emit("register", "user")
+
+socket.on("update", msgs => {
+  chat.innerHTML = ""
+  msgs.forEach(m => {
+    const li = document.createElement("li")
+    if (m.type === "text") li.innerText = m.value
+    else {
+      const a = document.createElement("a")
+      a.href = "/uploads/" + m.value
+      a.innerText = m.value
+      a.target = "_blank"
+      li.appendChild(a)
+    }
+    chat.appendChild(li)
+  })
+})
+</script>
+
+</body>
+</html>

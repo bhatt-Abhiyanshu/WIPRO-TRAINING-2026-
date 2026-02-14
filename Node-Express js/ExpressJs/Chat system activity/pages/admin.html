@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Chat</title>
+</head>
+<body>
+
+<h3>Admin Panel</h3>
+
+<input id="message" placeholder="Type message">
+<button onclick="sendMessage()">Send</button>
+
+<br><br>
+
+<input type="file" id="file">
+<button onclick="uploadFile()">Upload</button>
+
+<ul id="chat"></ul>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io("http://localhost:5001")
+
+  socket.emit("register", "admin")
+
+  function sendMessage() {
+    const msg = document.getElementById("message").value
+    if (!msg) return
+    socket.emit("chatMessage", msg)
+    document.getElementById("message").value = ""
+  }
+
+  function uploadFile() {
+    const fileInput = document.getElementById("file")
+    if (!fileInput.files.length) return
+
+    const formData = new FormData()
+    formData.append("file", fileInput.files[0])
+
+    fetch("/upload", {
+      method: "POST",
+      headers: {
+        username: "admin",
+        password: "admin123"
+      },
+      body: formData
+    })
+  }
+
+  socket.on("update", messages => {
+    const chat = document.getElementById("chat")
+    chat.innerHTML = ""
+
+    messages.forEach(m => {
+      const li = document.createElement("li")
+
+      if (m.type === "text") {
+        li.innerText = m.value
+      } else {
+        const a = document.createElement("a")
+        a.href = "/uploads/" + m.value
+        a.innerText = m.value
+        a.target = "_blank"
+        li.appendChild(a)
+      }
+
+      chat.appendChild(li)
+    })
+  })
+</script>
+
+</body>
+</html>
