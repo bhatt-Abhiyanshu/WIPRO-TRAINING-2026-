@@ -1,0 +1,26 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero-bg {
+  background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+}
+
+.offer-bg {
+  background-image: url("https://images.unsplash.com/photo-1548365328-5b8496b6f0b6");
+  background-size: cover;
+  background-position: center;
+}
