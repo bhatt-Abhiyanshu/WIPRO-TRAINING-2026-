@@ -51,7 +51,7 @@ const Payment = () => {
       <div className="card p-4 shadow">
         <h4>Total Amount: ₹{totalPrice}</h4>
 
-        // Delivery Mode 
+        {/* // Delivery Mode  */}
         <div className="mt-3">
           <h6>Select Delivery Mode</h6>
           <select
@@ -64,7 +64,7 @@ const Payment = () => {
           </select>
         </div>
 
-        // Payment Mode 
+        {/* // Payment Mode  */}
         <div className="mt-4">
           <h6>Select Payment Method</h6>
 

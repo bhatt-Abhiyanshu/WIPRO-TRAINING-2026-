@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
 
-          // Contact 
+          {/* Contact  */}
           <div className="col-md-4 mb-4">
             <h5 className="text-danger">Contact Us</h5>
             <p>Email: support@pizzastore.com</p>
@@ -14,7 +14,7 @@ const Footer = () => {
             <p>Open: 10 AM – 11 PM</p>
           </div>
 
-          //FaQ
+          {/* FaQ */}
           <div className="col-md-4 mb-4">
             <h5 className="text-danger">FAQs</h5>
             <p>• How long does delivery take?</p>
@@ -23,7 +23,7 @@ const Footer = () => {
             <p>Yes, for damaged or wrong orders.</p>
           </div>
 
-          // Google Map 
+          {/*  Google Map  */}
           <div className="col-md-4 mb-4">
             <h5 className="text-danger">Find Us</h5>
             <iframe

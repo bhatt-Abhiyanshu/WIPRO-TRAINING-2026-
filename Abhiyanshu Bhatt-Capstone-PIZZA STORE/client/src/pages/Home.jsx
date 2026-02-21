@@ -40,8 +40,8 @@ const Home = () => {
                 style={{ width: "100%", height: "300px", objectFit: "cover" }}
               />
               <div className="card-body">
-                <h5>Family Combo</h5>
-                <p>2 Large pizzas + pepsi.</p>
+                <h5>55% OFF!*</h5>
+                <p>Finish pizza alone in 5 minutes.</p>
               </div>
             </div>
           </div>

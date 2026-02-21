@@ -141,7 +141,7 @@ const AdminDashboard = () => {
       }
     ]
   };
-   //Frontend forms
+  //  Frontend forms
   return (
     <div className="container my-5">
 
@@ -164,7 +164,7 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      // CHART 
+      {/* CHART  */}
       <div className="card p-4 shadow mb-5">
         <Bar data={chartData} />
       </div>
@@ -224,7 +224,7 @@ const AdminDashboard = () => {
         </form>
       </div>
 
-      // MENU TABLE 
+      {/* MENU TABLE  */}
       <div className="card p-4 shadow mb-5">
         <h5>Manage Menu</h5>
 
@@ -261,7 +261,7 @@ const AdminDashboard = () => {
         </table>
       </div>
 
-      // ORDERS MANAGEMENt
+      {/* ORDERS MANAGEMENt */}
       <div className="card p-4 shadow mb-5">
         <h5>Manage Orders</h5>
 
@@ -308,7 +308,7 @@ const AdminDashboard = () => {
         </table>
       </div>
 
-      // CATEGORY CRUD 
+      {/* CATEGORY CRUD  */}
       <div className="card p-4 shadow">
         <h5>Manage Categories</h5>
 
